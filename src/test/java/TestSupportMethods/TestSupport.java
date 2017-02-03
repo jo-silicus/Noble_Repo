@@ -1,10 +1,16 @@
 package TestSupportMethods;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.net.URL;
+import java.util.HashMap;
+
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.noblemktkyc.model.Model;
 import com.noblemktkyc.model.PersonalInfoModel;
 import com.noblemktkyc.model.User;
 import com.noblemktkyc.service.UserService;
@@ -13,7 +19,7 @@ public class TestSupport {
 	final static Logger logger = Logger.getLogger(TestSupport.class);
 	
 	public User setSessionForMockTest(UserService mockUserService) throws Exception {
-		String userName = "pallavi";
+		String userName = "test";
 		String status = "_inProgress";
 		String directoryPath = "D:/NobleMktKYC/KYCDocuments";
 
@@ -35,15 +41,20 @@ public class TestSupport {
 	}
 
 	public String createPersonalModelForTestInString() throws Exception {
-		System.out.println("hi me ya hu;;;;;;;;;;;;;;;;;;;;;;;;;;");
+		
+		ClassLoader classLoader = getClass().getClassLoader();
+		File file = new File(classLoader.getResource("PersonalInfo_test@gmail.com.txt").getFile());
+		Model model = null;
 		ObjectMapper mapperObj = new ObjectMapper();
-		PersonalInfoModel model=new PersonalInfoModel();
-		model.setType("PersonalInfo");
-		model.setEmail("pall@gmail.com");
-		model.setFirstName("pallavi");
-		model.setLastName("zade");
-		model.setUserName("pallavi");
-		System.out.println(mapperObj.writeValueAsString(model));
+		logger.info("File path is : " + file.getPath());
+		if (file.exists()) {
+			
+			model= mapperObj.readValue(file, PersonalInfoModel.class);
+			
+		}
+	
+
+		
 		return mapperObj.writeValueAsString(model);
 
 	}

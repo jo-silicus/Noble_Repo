@@ -35,16 +35,16 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public BoxFolder getUserBoxFolder(String folderName) throws Exception {
 		logger.error("Inside UserServiceImpl :: getUserBoxFolder method");
-		BoxFolder boxFolder = null;
+		
 		try {
-			boxFolder = boxApiService.getBoxFolder(folderName);
+		
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			logger.error(e.getStackTrace());
 			logger.error("Exception in UserServiceImpl :: getUserBoxFolder method:: Exception is ", e);
 			throw e;
-		}
-		return boxFolder;
+		} 
+		return null;
 	}
 
 }

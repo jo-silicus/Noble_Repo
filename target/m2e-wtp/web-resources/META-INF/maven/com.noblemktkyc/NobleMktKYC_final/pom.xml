@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>NobleMktKYC_final</name>
+	<name>NobleMktKYC</name>
 	<properties>
 		<springframework.version>4.2.0.RELEASE</springframework.version>
 		<jackson.version>2.5.3</jackson.version>
@@ -255,7 +255,7 @@
 				<version>2.4</version>
 				<configuration>
 					<warSourceDirectory>src/main/webapp</warSourceDirectory>
-					<warName>NobleMktKYC_final</warName>
+					<warName>NobleMktKYC</warName>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
@@ -266,7 +266,7 @@
 				<configuration>
 					<url>http://localhost:8080/manager/text</url>
 					<server>Tomcat</server>
-					<path>/NobleMktKYC_final</path>
+					<path>/NobleMktKYC</path>
 					<username>tomcat</username>
 					<password>tomcat</password>
 				</configuration>
@@ -276,6 +276,6 @@
 		</plugins>
 
 	</build>
-	<description>NobleMktKYC_final</description>
+	<description>NobleMktKYC</description>
 </project>
   

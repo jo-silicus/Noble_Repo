@@ -273,9 +273,9 @@
 								data-ng-class="{ 'has-error' : addEditAccountInfo.corrPaymentType.$invalid && addEditAccountInfo.$submitted}">
 								<label>Payment Code Type<span class="error">*</span></label> <select
 									class="form-control"
-									data-ng-model="accountInfoModel.corr_payment_code_one_id"
-									required
-									data-ng-change="checkSelectedPaymentType(accountInfoModel.corr_payment_code_one_id,2)"
+									data-ng-disabled="isCorrPaymentTypeSelected"
+									data-ng-model="corr_payment_code_one_id" required
+									data-ng-change="checkSelectedPaymentType(corr_payment_code_one_id,2)"
 									name="corrPaymentType" id="corrPaymentType">
 									<option value="">-Select-</option>
 									<option>Routing/ABA No</option>
@@ -303,7 +303,7 @@
 								</label>
 								<div mass-autocomplete>
 									<input type="text" class="form-control"
-										data-ng-model="accountInfoModel.corr_payment_code_one_ref"
+										data-ng-model="accountInfoModel.corrRoutingNo"
 										mass-autocomplete-item="autocomplete_corrBankNames" required
 										name="corrBankCode" id="corrBankCode">
 								</div>
@@ -315,8 +315,8 @@
 								data-ng-class="{ 'has-error' : addEditAccountInfo.corrBankCode.$invalid && addEditAccountInfo.$submitted}">
 								<label> Code<span class="error">*</span>
 								</label> <input type="text" class="form-control"
-									data-ng-model="accountInfoModel.corr_payment_code_one_ref"
-									required name="corrBankCode" id="corrBankCode">
+									data-ng-model="accountInfoModel.corrRoutingNo" required
+									name="corrBankCode" id="corrBankCode">
 							</div>
 						</div>
 
@@ -524,8 +524,3 @@
 		</data-ng-form>
 	</div>
 </div>
-
-
-
-
-

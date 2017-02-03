@@ -2,7 +2,9 @@ package com.noblemktkyc.fileoperation;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
@@ -46,6 +48,7 @@ public class FileOperationImp implements Serializable, FileOperation {
 		logger.info("Inside FileOperationImp :: saveKycInfo Method");
 		File modelDataFile = null;
 		BufferedOutputStream stream = null;
+		OutputStream fileStream=null;
 		String folderName = userInfo.getUserName() + userInfo.getStatus();
 		String fileName = modelInfo.getType() + "_" + userInfo.getUserName() + ".txt";
 		try {
@@ -66,9 +69,11 @@ public class FileOperationImp implements Serializable, FileOperation {
 			throw e;
 		}
 		try {
-			stream = new BufferedOutputStream(new FileOutputStream(modelDataFile));
+		    fileStream=new FileOutputStream(modelDataFile);
+			stream = new BufferedOutputStream(fileStream);
 			ObjectMapper mapper = new ObjectMapper();
 			stream.write(mapper.writeValueAsString(modelInfo).getBytes());
+		
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			logger.error("Exception in FileOperationImp :: saveKycInfo Method :: exception is", e);
@@ -76,11 +81,15 @@ public class FileOperationImp implements Serializable, FileOperation {
 		} finally {
 			if (stream != null) {
 				stream.close();
+				fileStream.close();
+			}
+			if (fileStream != null) {
+				
+				fileStream.close();
 			}
 		}
 
-		// Upload the above file to Box
-		boxService.uploadFileToBox(fileName, modelDataFile, userInfo.getBoxFolder());
+		
 
 	}
 
@@ -90,10 +99,10 @@ public class FileOperationImp implements Serializable, FileOperation {
 	 * @param file
 	 * @param fileName
 	 * @param userInfo
-	 * @return
+	 * @return 
 	 * @throws Exception
 	 */
-	public String saveUploadedFileToDisk(MultipartFile file, String fileName, User userInfo) throws Exception {
+	public String saveUploadedFileToDisk(MultipartFile file, String fileName, User userInfo) throws  FileNotFoundException,Exception {
 		logger.info("Inside FileOperationImp :: saveUploadedFileToDisk Method");
 		File convFile;
 		String folderName = userInfo.getUserName() + userInfo.getStatus();
@@ -117,9 +126,8 @@ public class FileOperationImp implements Serializable, FileOperation {
 			}
 		}
 
-		// Upload the above file to Box
-		return boxService.uploadFileToBox(fileName, convFile, userInfo.getBoxFolder());
-
+	
+        return "done";
 	}
 
 	/**
@@ -149,8 +157,7 @@ public class FileOperationImp implements Serializable, FileOperation {
 						"Inside FileOperationImp :: renameDirectory Method :: Completed folder already exists hence Cannot be rename");
 			}
 
-			boxService.reNameFolder(oldName, newName);
-
+		
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			logger.error(e.getStackTrace());
@@ -174,7 +181,7 @@ public class FileOperationImp implements Serializable, FileOperation {
 			String finalStatus) throws Exception {
 		logger.info("Inside FileOperationImp :: readFileInObject Method");
 		try {
-			boxService.downloadFolderFromBox(userName + finalStatus, listInfoType, path, userName);
+			
 			Map<String, Object> kycDetail = null;
 			ObjectMapper objectMapper = new ObjectMapper();
 			for (String infoType : listInfoType) {

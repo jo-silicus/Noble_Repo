@@ -26,20 +26,17 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class EncryptorImpl implements Encryptor {
-	final static Logger logger = Logger.getLogger(EncryptorImpl.class);
+
 	/*
 	 * @Value("${keyString}") // get the value from the property file for max
-	 * file size private String keyString;
+	
 	 */
 	private String keyString = "adkj@#$0p#@adflkj)(*jlj@#$#@LKjasdjlkj<.,mo@#$@#kljlkdsuqrs";
-	
-	/*@Value("${applicationUrl}")
-	private String applicationUrl;*/
+	final static Logger logger = Logger.getLogger(EncryptorImpl.class);
 
 	@Override
 	public String getEncryptedUrl(String stringToEncode) {
 		logger.info("Inside Encryptor:: getEncryptedUrl method");
-		
 		try {
 			String[] encrypted = encryptObject(stringToEncode);
 			// url may differ.. based upon project initial context

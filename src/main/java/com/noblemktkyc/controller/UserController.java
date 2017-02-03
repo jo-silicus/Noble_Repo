@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,7 +38,7 @@ public class UserController {
 
 	final static Logger logger = Logger.getLogger(UserController.class);
 
-
+	
 	/**
 	 * To create userInfo object for logged in user.
 	 * 
@@ -47,29 +46,24 @@ public class UserController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping(value = "/createUser", method = RequestMethod.POST,produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/createUser", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> createUser(@RequestParam String userName, HttpServletRequest request) {
-		System.out.println("i m here to set u.........test");
 		logger.info("inside UserController :: createUser Method");
 		User user = new User();
 		user.setUserName(userName);
 		user.setDirectoryPath(commonController.getDocumentPath());
 		user.setStatus(status);
-		System.out.println("i m here to set u.........test");
-		try {	
-			user.setBoxFolder(userService.getUserBoxFolder(userName + status));
+		try {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("userInfo", user);
-			  System.out.println("================"+user+"++++++++++++++"+session);
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			logger.error(e.getStackTrace());
 			logger.error("Exception in UserController :: createUser method:: Exception is ::", e);
 			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-     
+		
 		return new ResponseEntity<String>(HttpStatus.OK);
-	}
-	
-	
+	} 
+
 }

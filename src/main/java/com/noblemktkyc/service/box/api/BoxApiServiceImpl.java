@@ -22,8 +22,8 @@ import com.box.sdk.BoxItem;
 import com.box.sdk.BoxItem.Info;
 import com.box.sdk.BoxSharedLink;
 import com.box.sdk.FileUploadParams;
-import com.noblemarkets.storage.box.NobleBoxClient;
-import com.noblemarkets.storage.box.NobleBoxConnectionSpecification;
+//import com.noblemarkets.storage.box.NobleBoxClient;
+//import com.noblemarkets.storage.box.NobleBoxConnectionSpecification;
 
 /**
  * @author : Silicus Technologies, 2016
@@ -40,32 +40,18 @@ public class BoxApiServiceImpl implements BoxApiService {
 	private void setBoxAPIConnection() throws Exception {
 		logger.info("Inside BoxApiServiceImpl::setBoxAPIConnection Method");
 		try {
-			NobleBoxConnectionSpecification intakeConnSpec = new NobleBoxConnectionSpecification("kycintake");
+			
+			BoxAPIConnection intakeConnSpec=new BoxAPIConnection("kycintake");
 			logger.info("BoxApiServiceImpl::setBoxAPIConnection Method::before creating connection::");
 			if (intakeConnSpec != null) {
-				this.apiConn = NobleBoxClient.getBoxClient(intakeConnSpec);
+				
+				this.apiConn = intakeConnSpec;
 				logger.info("BoxApiServiceImpl::setBoxAPIConnection Method::after creating connection::");
 			}
 		} catch (BoxAPIException e) {
 			logger.error(e.getResponse());
 			logger.error(e.getStackTrace());
 			logger.error("BoxAPIException in BoxApiServiceImpl::setBoxAPIConnection Method::exception is" + e);
-			throw e;
-		} catch (AccessDeniedException e) {
-			logger.error("No path specified for file private_key_intake.pem in config.properties");
-			logger.error(e.getStackTrace());
-			logger.error("AccessDeniedException in BoxApiServiceImpl::setBoxAPIConnection Method::exception is" + e);
-			throw e;
-		} catch (NoSuchFileException e) {
-			logger.error("Not able to locate file private_key_intake.pem please check the path in config.properties");
-			logger.error(e.getMessage());
-			logger.error(e.getStackTrace());
-			logger.error("NoSuchFileException in BoxApiServiceImpl::setBoxAPIConnection Method::exception is" + e);
-			throw e;
-		} catch (IOException e) {
-			logger.error(e.getMessage());
-			logger.error(e.getStackTrace());
-			logger.error("IOException in BoxApiServiceImpl::setBoxAPIConnection Method::exception is" + e);
 			throw e;
 		} catch (Exception e) {
 			logger.error(e.getMessage());
@@ -119,31 +105,7 @@ public class BoxApiServiceImpl implements BoxApiService {
 			setBoxAPIConnection();
 			BoxFolder userfolder = null;
 			BoxFolder rootFolder = BoxFolder.getRootFolder(apiConn);
-			/*for (BoxItem.Info info : rootFolder) {
-				logger.info("*****@@@@@@@@***"+ info.getName());
-				logger.info("deleting");
-				BoxFolder a=(BoxFolder) info.getResource();
-				a.delete(true);
-			}*/
-			/*for (BoxItem.Info info : rootFolder) {
-				logger.info("*****@@@@@@@@***"+ info.getName());
-				BoxFolder a=(BoxFolder) info.getResource();
-				a.delete(true);
-				if (info.getName().contains("test")){
-					logger.info("deleted");
-					BoxFolder a=(BoxFolder) info.getResource();
-					a.delete(true);
-				}if(info.getName().equals("test1_kyc@noblemarkets.com_fileCopyComplete")){
-					logger.info("deleted");
-					BoxFolder a=(BoxFolder) info.getResource();
-					a.delete(true);
-				}if(info.getName().equals("test1_kyc@noblemarkets.com_importing")){
-					logger.info("deleted");
-					BoxFolder a=(BoxFolder) info.getResource();
-					a.delete(true);
-				}
-			}*/
-			
+
 			for (BoxItem.Info info : rootFolder) {
 				logger.info("Inside BoxApiServiceImpl::getBoxFolder Method :: File/folder name is " + info.getName());
 				if (folderName.equals(info.getName())) {
@@ -307,7 +269,7 @@ public class BoxApiServiceImpl implements BoxApiService {
 			logger.error("Exception in BoxApiServiceImpl::reNameFolder Method :: Exception is ::", e);
 		}
 	}
-
+	
 	/**
 	 * get email ids of the users with incomplete KYC process
 	 * 

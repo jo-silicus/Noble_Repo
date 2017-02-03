@@ -28,9 +28,23 @@ public class AccountInfoModel implements Serializable, Model {
 	private String account_no;
 	private String payment_code_one_id;
 	private String payment_code_one_ref;
-	private String corr_payment_code_one_id;
-	private String corr_payment_code_one_ref;
+	private String corrRoutingNo;
+	private String bank;
 
+	// Wallet Account Address
+	private String walletAccountName;
+	private String walletAddress;
+	private String corraddress1;
+	private String corraddress2;
+	private String corrAccountsCountryName;
+	private String corrstate;
+	private String corrcity;
+	private String corrbankName;
+	private String corrzip;
+
+	public AccountInfoModel() {
+		// constructor stub
+	}
 	public String getPayment_code_one_id() {
 		return payment_code_one_id;
 	}
@@ -47,34 +61,14 @@ public class AccountInfoModel implements Serializable, Model {
 		this.payment_code_one_ref = payment_code_one_ref;
 	}
 
-	public String getCorr_payment_code_one_id() {
-		return corr_payment_code_one_id;
+	public String getCorrRoutingNo() {
+		return corrRoutingNo;
 	}
 
-	public void setCorr_payment_code_one_id(String corr_payment_code_one_id) {
-		this.corr_payment_code_one_id = corr_payment_code_one_id;
+	public void setCorrRoutingNo(String corrRoutingNo) {
+		this.corrRoutingNo = corrRoutingNo;
 	}
 
-	public String getCorr_payment_code_one_ref() {
-		return corr_payment_code_one_ref;
-	}
-
-	public void setCorr_payment_code_one_ref(String corr_payment_code_one_ref) {
-		this.corr_payment_code_one_ref = corr_payment_code_one_ref;
-	}
-
-	private String bank;
-
-	// Wallet Account Address
-	private String walletAccountName;
-	private String walletAddress;
-	private String corraddress1;
-	private String corraddress2;
-	private String corrAccountsCountryName;
-	private String corrstate;
-	private String corrcity;
-	private String corrbankName;
-	private String corrzip;
 	@Valid
 	private BankAccountAddressModel account_information;
 

@@ -16,6 +16,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScan(basePackages = "com.noblemktkyc")
 @EnableScheduling
 public class EmailScheduler {
+
 	public static void main(String[] args) {
 		SpringApplication.run(EmailScheduler.class);
 	}

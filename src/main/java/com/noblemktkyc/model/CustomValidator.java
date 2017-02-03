@@ -21,6 +21,10 @@ public class CustomValidator implements Validator {
 
 	final static Logger logger = Logger.getLogger(CustomValidator.class);
 
+	public CustomValidator() {
+		// constructor stub
+	}
+
 	public boolean supports(Class<?> clazz) {
 		return Model.class.isAssignableFrom(clazz);
 	}
@@ -44,36 +48,34 @@ public class CustomValidator implements Validator {
 							errors.reject("dob.validation");
 						}
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
+
 						logger.error("CustomValidator Error::", e);
-						e.printStackTrace();
+
 					}
 				}
 
 				for (DocumentUploadDetailModel documentUploadDetailModel : user.getDocumentUploadDetail()) {
 
-					if (documentUploadDetailModel != null) {
-						if ((documentUploadDetailModel.getIdExpiryDate() != null
-								&& !documentUploadDetailModel.getIdExpiryDate().isEmpty())
-								&& (documentUploadDetailModel.getIdIssueDate() != null
-										&& !documentUploadDetailModel.getIdIssueDate().isEmpty())) {
+					if ((documentUploadDetailModel.getIdExpiryDate() != null
+							&& !documentUploadDetailModel.getIdExpiryDate().isEmpty())
+							&& (documentUploadDetailModel.getIdIssueDate() != null
+									&& !documentUploadDetailModel.getIdIssueDate().isEmpty())) {
 
-							try {
-								Date issueDate = dateFormat.parse(documentUploadDetailModel.getIdIssueDate());
+						try {
+							Date issueDate = dateFormat.parse(documentUploadDetailModel.getIdIssueDate());
 
-								Date expiryDate = dateFormat.parse(documentUploadDetailModel.getIdExpiryDate());
-								if (issueDate.compareTo(expiryDate) > 0) {
-									logger.error("Issue date must be earlier than expiry date" + issueDate + " "
-											+ expiryDate);
-									errors.reject("idIssueDate.validation."
-											+ documentUploadDetailModel.getDtype().replace(" ", ""));
-								}
-							} catch (ParseException e) {
-								logger.error("ParseException in validate" + e);
-								e.printStackTrace();
+							Date expiryDate = dateFormat.parse(documentUploadDetailModel.getIdExpiryDate());
+							if (issueDate.compareTo(expiryDate) > 0) {
+								logger.error(
+										"Issue date must be earlier than expiry date" + issueDate + " " + expiryDate);
+								errors.reject("idIssueDate.validation."
+										+ documentUploadDetailModel.getDtype().replace(" ", ""));
 							}
+						} catch (ParseException e) {
+							logger.error("ParseException in validate" + e);
 
 						}
+
 					}
 
 				}
@@ -82,7 +84,6 @@ public class CustomValidator implements Validator {
 				EntityInfoModel user = (EntityInfoModel) target;
 				if (user != null && user.getEntity_address().getPhone() != null
 						&& user.getEntity_address().getAlt_Phone() != null
-						&& !user.getEntity_address().getPhone().isEmpty()
 						&& !user.getEntity_address().getPhone().isEmpty()) {
 					// Phone no and alternate phone number should be different
 					if (user.getEntity_address().getPhone().equals(user.getEntity_address().getAlt_Phone())) {

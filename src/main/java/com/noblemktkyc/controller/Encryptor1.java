@@ -1,11 +1,13 @@
 package com.noblemktkyc.controller;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
+import java.util.ArrayList;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
@@ -30,9 +32,9 @@ public class Encryptor1 {
 	private String keyString = "adkj@#$0p#@adflkj)(*jlj@#$#@LKjasdjlkj<.,mo@#$@#kljlkdsuqrs";
 	final static Logger logger = Logger.getLogger(Encryptor1.class);
 	//@Value("${applicationUrl}")
-	private String applicationUrl="http://10.55.1.131:9591/NobleMktKYC/static/index.html#/login?";
+	private String applicationUrl="http://10.55.1.19:8088/NobleMktKYC/static/index.html#/login?";
 
-	public String[] getEncryptedUrl(String hash) {
+	public String[] getEncryptedUrl(String hash) { 
 		logger.info("Inside Encryptor:: getEncryptedUrl method");
 		try {
 			String[] encrypted = encryptObject(hash);
@@ -105,10 +107,11 @@ public class Encryptor1 {
 		logger.info("Inside Encryptor:: main method");
 		Encryptor1 encryptedViewController = new Encryptor1();
 		try {
-			encryptedViewController.getEncryptedUrl("jyoti2@gmail.com");
+			encryptedViewController.getEncryptedUrl("pallshivmaniczade@gmail.com");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+			logger.error("Exception Inside Encryptor:: main method", e);
+			
 		}
 
 	}

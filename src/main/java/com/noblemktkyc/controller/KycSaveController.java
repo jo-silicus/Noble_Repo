@@ -54,6 +54,10 @@ public class KycSaveController {
 
 	@Autowired
 	CustomValidator customValidator;
+	
+	public KycSaveController() {
+		//constructor stub
+	}
 
 	/**
 	 * 
@@ -102,11 +106,12 @@ public class KycSaveController {
 			 */
 			HttpSession session = httpServletRequest.getSession(false);
 			if (kycInfoModel != null && kycInfoModel.getUserName() != null
-					&& session.getAttribute("userInfo") != null) {
+					&& session.getAttribute("userInfo") != null &&  kycInfoModel.getType()!=null) {
 				kycSaveService.saveKycInfo(kycInfoModel, (User) session.getAttribute("userInfo"));
+				logger.info("inside controller ::" + kycInfoModel.getType() + kycInfoModel.getUserName());
 			}
 
-			logger.info("inside controller ::" + kycInfoModel.getType() + kycInfoModel.getUserName());
+			
 
 			if (errorList != null && errorList.size() > 0) {
 				return new ResponseEntity<List<String>>(errorList, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -135,7 +140,6 @@ public class KycSaveController {
 	public ResponseEntity<List<String>> uploadFileHandler(MultipartHttpServletRequest request,
 			HttpServletResponse response, HttpServletRequest httpServletRequest, @RequestParam String userName,
 			@RequestParam String newFileName) {
-		System.out.println("=======================uplode++++++++++"+userName+"====="+newFileName);
 		logger.info("inside KycSaveController :: uploadFileHandler Method to save the file");
 		List<String> errorList = new ArrayList<>();
 		String uploadedFilePath = null;

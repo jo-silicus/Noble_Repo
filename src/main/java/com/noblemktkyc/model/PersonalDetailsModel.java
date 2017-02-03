@@ -9,11 +9,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class PersonalDetailsModel {
 	@NotEmpty
 	private String dob;
-	
 	private String maiden_Name;
 	private String title;
 	@NotEmpty
 	private String country_of_Citizenship;
+	public PersonalDetailsModel() {
+		//constructor stub
+	}
 
 	public String getDob() {
 		return dob;

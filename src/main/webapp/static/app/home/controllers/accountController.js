@@ -47,6 +47,8 @@
 								$scope.isCorrStateSelected = false;
 								$scope.isAutoComplete = false;
 								$scope.isCorrAutoComplete = false;
+								$scope.isCorrPaymentTypeSelected = false;
+								$scope.corr_payment_code_one_id = "";
 								getInitialData(localStorageService
 										.get('userName'));
 								fetchBankNames();
@@ -70,6 +72,8 @@
 										$scope.isCorrStateSelected = true;
 										$scope.accountInfoModel = sharedFactory
 												.getUserDetails().AccountInfo;
+										$scope.corr_payment_code_one_id = $scope.accountInfoModel.payment_code_one_id;
+										$scope.isCorrPaymentTypeSelected = true;
 										$rootScope.isSave.accountSave = true;
 									}
 								}
@@ -599,7 +603,7 @@
 									selectedObject) {
 								if (type == 1) {
 									$scope.accountInfoModel.corrbankName = Name;
-									$scope.accountInfoModel.corr_payment_code_one_ref = Id;
+									$scope.accountInfoModel.corrRoutingNo = Id;
 									$scope.isCorrBankNameSelected = true;
 								} else if (type == 2) {
 									$scope.accountInfoModel.bank = Name;
@@ -644,20 +648,38 @@
 							$scope.checkSelectedPaymentType = function(
 									paymentType, type) {
 								if (type == 1) {
+									$scope.corr_payment_code_one_id = paymentType;
+									if (paymentType != undefined)
+										$scope.isCorrPaymentTypeSelected = true;
+									else
+										$scope.isCorrPaymentTypeSelected = false;
+
 									if (paymentType === "Routing/ABA No") {
 										$scope.isAutoComplete = true;
-										$scope.accountInfoModel.payment_code_one_ref = "";
-										$scope.accountInfoModel.bank = "";
-									} else
+										$scope.isCorrAutoComplete = true;
+										resetPaymentSection();
+									} else {
 										$scope.isAutoComplete = false;
+										$scope.isCorrAutoComplete = false;
+										resetPaymentSection();
+									}
 								} else {
 									if (paymentType === "Routing/ABA No") {
 										$scope.isCorrAutoComplete = true;
-										$scope.accountInfoModel.corr_payment_code_one_ref = "";
+										$scope.accountInfoModel.corrRoutingNo = "";
 										$scope.accountInfoModel.corrbankName = "";
-									} else
+									} else {
 										$scope.isCorrAutoComplete = false;
+										$scope.accountInfoModel.corrRoutingNo = "";
+										$scope.accountInfoModel.corrbankName = "";
+									}
 								}
+							}
+							function resetPaymentSection() {
+								$scope.accountInfoModel.payment_code_one_ref = "";
+								$scope.accountInfoModel.bank = "";
+								$scope.accountInfoModel.corrRoutingNo = "";
+								$scope.accountInfoModel.corrbankName = "";
 							}
 
 							init();

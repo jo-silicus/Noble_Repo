@@ -24,10 +24,14 @@ import com.noblemktkyc.service.Decryptor;
  */
 @RestController
 public class DecryptionController {
-	final static Logger logger = Logger.getLogger(DecryptionController.class);
+	static final Logger logger = Logger.getLogger(DecryptionController.class);
 
 	@Autowired
 	private Decryptor decryptorService;
+
+	public DecryptionController() {
+// constructor stub
+	}
 
 	/**
 	 * To decrypt email id of user from URL. The email id will be used to fetch
@@ -36,6 +40,7 @@ public class DecryptionController {
 	 * @param httpServletRequest
 	 * @return
 	 */
+
 	@RequestMapping(value = "/decryptUrl", method = RequestMethod.GET)
 	public ResponseEntity<List<String>> decryptUrl(HttpServletRequest httpServletRequest) {
 		logger.info("Inside DecryptionController :: decryptUrl Method");

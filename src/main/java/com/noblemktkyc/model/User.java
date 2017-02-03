@@ -15,6 +15,9 @@ public class User implements Serializable {
 	private String directoryPath;
 	private BoxFolder boxFolder;
 	private String status;
+	public User() {
+		//constructor stub
+	}
 
 	public String getUserName() {
 		return userName;
@@ -47,12 +50,6 @@ public class User implements Serializable {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	@Override
-	public String toString() {
-		return "User [userName=" + userName + ", directoryPath=" + directoryPath + ", boxFolder=" + boxFolder
-				+ ", status=" + status + "]";
 	}
 
 }

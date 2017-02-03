@@ -23,7 +23,7 @@ import com.noblemktkyc.service.EmailNotification;
  */
 @RestController
 public class EmailNotificationController {
-	final static Logger logger = Logger.getLogger(EmailNotificationController.class);
+	static	final  Logger logger = Logger.getLogger(EmailNotificationController.class);
 
 	@Autowired
 	EmailNotification emailService;
@@ -31,6 +31,11 @@ public class EmailNotificationController {
 	private String emailSource;
 	@Value("${emailSubject}")
 	private String emailSubject;
+	
+	
+	public EmailNotificationController() {
+		//Constructor 
+	}
 
 	/**
 	 * To send a KYC process completion confirmation to the registered user

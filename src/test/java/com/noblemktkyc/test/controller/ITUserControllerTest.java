@@ -32,10 +32,15 @@ import com.noblemktkyc.configuration.ApplicationInitializer;
 public class ITUserControllerTest {
 
 	final static Logger logger = Logger.getLogger(ITUserControllerTest.class);
+	
 
 	@Autowired
 	private WebApplicationContext wac;
 	private MockMvc mockMvc;
+	
+public ITUserControllerTest() {
+		// constructor stub
+	}
 
 	@Before
 	public void setUp() {
@@ -44,7 +49,7 @@ public class ITUserControllerTest {
 
 	@Test
 	public void createUserTest() throws Exception {
-	mockMvc.perform(post("/createUser").param("userName", "pallavi").contentType(MediaType.APPLICATION_JSON_VALUE))
+	mockMvc.perform(post("/createUser").param("userName", "test").contentType(MediaType.APPLICATION_JSON_VALUE))
 			.andExpect(status().isOk());
 	}
 	

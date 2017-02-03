@@ -1,8 +1,11 @@
 package com.noblemktkyc.test.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.io.File;
 import java.io.FileInputStream;
+import java.net.URL;
 
 import org.apache.log4j.Logger;
 import org.junit.Before;
@@ -36,19 +39,27 @@ public class ITKycSaveControllerTest {
     private TestSupport testSupportMethods =new TestSupport(); 
 	@Autowired
 	UserService mockUserService;
+	public ITKycSaveControllerTest() {
+		//constructor stub
+	}
 	
 	@Before
 	public void setUp() {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
 	}
 	@Test
-	public void uplodeFileTest() throws Exception {
+	public void uploadFileTest() throws Exception {
 		testSupportMethods.setSessionForMockTest(mockUserService);
-		FileInputStream fis = new FileInputStream("D:\\Chrysanthemum.jpg");
+		
+		ClassLoader classLoader = getClass().getClassLoader();
+		File file = new File(classLoader.getResource("Chrysanthemum.jpg").getFile());
+		System.out.println(file.getAbsolutePath());
+		FileInputStream fis = new FileInputStream(file);
 		MockMultipartFile firstFile=new MockMultipartFile("Chrysanthemum.jpg", fis);
 		fis.close();
+		
 		mockMvc.perform(MockMvcRequestBuilders.fileUpload("/uploadFile")
-                .file(firstFile).param("userName", "pallavi").param("newFileName", "Chrysanthemum.jpg").sessionAttr("userInfo", testSupportMethods.setSessionForMockTest(mockUserService))
+                .file(firstFile).param("userName", "test").param("newFileName", "Chrysanthemum.jpg").sessionAttr("userInfo", testSupportMethods.setSessionForMockTest(mockUserService))
 				.contentType(MediaType.APPLICATION_JSON_VALUE))
 		.andExpect(status().isOk());
 	
@@ -58,7 +69,6 @@ public class ITKycSaveControllerTest {
 	public void saveKycInfoTest() throws Exception {
 	
 		testSupportMethods.createPersonalModelForTestInString();
-		System.out.println("================%%%%%%%%%%%%%%%%%%%%%"+testSupportMethods.createPersonalModelForTestInString());
 		mockMvc.perform(post("/saveKycInfo/").content(testSupportMethods.createPersonalModelForTestInString()).contentType(MediaType.APPLICATION_JSON_VALUE).sessionAttr("userInfo", testSupportMethods.setSessionForMockTest(mockUserService)))
 		.andExpect(status().isOk());
 		

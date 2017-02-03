@@ -1,16 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.noblemktkyc</groupId>
-	<artifactId>NobleMktKYC_final</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>com.noblemarkets.app</groupId>
+	<artifactId>client-registration</artifactId>
+	<version>0.6-SNAPSHOT</version>
 	<packaging>war</packaging>
-
-	<name>NobleMktKYC_final</name>
+	<name>NobleMktKYC</name>
 	<properties>
 		<springframework.version>4.2.0.RELEASE</springframework.version>
-		<jackson.version>2.5.3</jackson.version>
-	</properties>
+		<jackson.version>2.7.6</jackson.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jenkins.e2eTests.reportsDirectory>target/surefire-reports</jenkins.e2eTests.reportsDirectory>
+</properties>
+
+
 	<repositories>
 		<repository>
 			<id>spring-milestones</id>
@@ -141,22 +144,12 @@
 			<artifactId>box-java-sdk</artifactId>
 			<version>2.1.1</version>
 		</dependency>
-		<dependency>
-			<groupId>com.noblemarkets.api</groupId>
-			<artifactId>box-client</artifactId>
-			<version>0.6-SNAPSHOT</version>
-		</dependency>
+		<!-- <dependency> <groupId>com.noblemarkets.api</groupId> <artifactId>box-client</artifactId> 
+			<version>0.6-SNAPSHOT</version> </dependency> -->
 
-		<dependency>
-			<groupId>com.noblemarkets.api</groupId>
-			<artifactId>noble-api</artifactId>
-			<version>0.5</version>
-		</dependency>
-		<dependency>
-			<groupId>com.noblemarkets.api</groupId>
-			<artifactId>unify</artifactId>
-			<version>0.6-SNAPSHOT</version>
-		</dependency>
+		<!-- <dependency> <groupId>com.noblemarkets.api</groupId> <artifactId>noble-api</artifactId> 
+			<version>0.5</version> </dependency> <dependency> <groupId>com.noblemarkets.api</groupId> 
+			<artifactId>unify</artifactId> <version>0.6-SNAPSHOT</version> </dependency> -->
 		<!-- display logger in color -->
 		<dependency>
 			<groupId>com.jcabi</groupId>
@@ -232,13 +225,20 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.5.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.19.1</version>
+			<type>maven-plugin</type>
+		</dependency>
 
 	</dependencies>
 
 
 	<build>
-		<finalName>NobleMktKYC_final</finalName>
+		<finalName>NobleMktKYC</finalName>
 		<plugins>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -255,7 +255,7 @@
 				<version>2.4</version>
 				<configuration>
 					<warSourceDirectory>src/main/webapp</warSourceDirectory>
-					<warName>NobleMktKYC_final</warName>
+					<warName>NobleMktKYC</warName>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
@@ -266,7 +266,7 @@
 				<configuration>
 					<url>http://localhost:8080/manager/text</url>
 					<server>Tomcat</server>
-					<path>/NobleMktKYC_final</path>
+					<path>/NobleMktKYC</path>
 					<username>tomcat</username>
 					<password>tomcat</password>
 				</configuration>
@@ -276,6 +276,6 @@
 		</plugins>
 
 	</build>
-	<description>NobleMktKYC_final</description>
+	<description>Noble Markets public KYC portal</description>
 </project>
   
