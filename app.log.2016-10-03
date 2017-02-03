@@ -1,0 +1,119 @@
+DEBUG: [main] 2016-10-03 11:56:08,880 org.jboss.logging Logging Provider: org.jboss.logging.Log4jLoggerProvider
+INFO : [main] 2016-10-03 11:56:08,894 org.hibernate.validator.internal.util.Version HV000001: Hibernate Validator 5.0.1.Final
+DEBUG: [main] 2016-10-03 11:56:08,903 org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+DEBUG: [main] 2016-10-03 11:56:08,905 org.hibernate.validator.internal.engine.ConfigurationImpl Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+DEBUG: [main] 2016-10-03 11:56:08,913 org.hibernate.validator.internal.engine.ConfigurationImpl Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+DEBUG: [main] 2016-10-03 11:56:08,914 org.hibernate.validator.internal.engine.ConfigurationImpl Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy38
+DEBUG: [main] 2016-10-03 11:56:08,918 org.hibernate.validator.internal.xml.ValidationXmlParser Trying to load META-INF/validation.xml for XML based Validator configuration.
+DEBUG: [main] 2016-10-03 11:56:08,921 org.hibernate.validator.internal.xml.ValidationXmlParser No META-INF/validation.xml found. Using annotation based configuration only.
+ERROR: [main] 2016-10-03 11:56:09,045 com.noblemktkyc.service.UserServiceImpl Inside UserServiceImpl :: getUserBoxFolder method
+INFO : [main] 2016-10-03 11:56:09,046 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method
+INFO : [main] 2016-10-03 11:56:09,046 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::setBoxAPIConnection Method
+INFO : [main] 2016-10-03 11:56:09,047 com.noblemktkyc.service.box.api.BoxApiServiceImpl BoxApiServiceImpl::setBoxAPIConnection Method::before creating connection::
+INFO : [main] 2016-10-03 11:56:11,921 com.noblemktkyc.service.box.api.BoxApiServiceImpl BoxApiServiceImpl::setBoxAPIConnection Method::after creating connection::
+INFO : [main] 2016-10-03 11:56:12,317 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method :: File/folder name is kyctestsample@gmail.com_complete
+INFO : [main] 2016-10-03 11:56:12,318 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::createFolder Method
+ERROR: [main] 2016-10-03 11:56:12,885 com.noblemktkyc.service.UserServiceImpl Inside UserServiceImpl :: getUserBoxFolder method
+INFO : [main] 2016-10-03 11:56:12,885 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method
+INFO : [main] 2016-10-03 11:56:12,886 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::setBoxAPIConnection Method
+INFO : [main] 2016-10-03 11:56:12,887 com.noblemktkyc.service.box.api.BoxApiServiceImpl BoxApiServiceImpl::setBoxAPIConnection Method::before creating connection::
+INFO : [main] 2016-10-03 11:56:14,100 com.noblemktkyc.service.box.api.BoxApiServiceImpl BoxApiServiceImpl::setBoxAPIConnection Method::after creating connection::
+INFO : [main] 2016-10-03 11:56:14,470 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method :: File/folder name is kyctestsample@gmail.com_complete
+INFO : [main] 2016-10-03 11:56:14,471 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method :: File/folder name is pallavi_inProgress
+INFO : [main] 2016-10-03 11:56:14,472 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method :: User Folder found pallavi_inProgress
+INFO : [main] 2016-10-03 11:56:14,527 com.noblemktkyc.controller.KycSaveController inside KycSaveController :: uploadFileHandler Method to save the file
+INFO : [main] 2016-10-03 11:56:14,528 com.noblemktkyc.controller.KycSaveController Inside KycSaveServiceImpl :: saveUploadedFileToDisk Method
+INFO : [main] 2016-10-03 11:56:14,529 com.noblemktkyc.fileoperation.FileOperationImp Inside FileOperationImp :: saveUploadedFileToDisk Method
+INFO : [main] 2016-10-03 11:56:14,531 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::uploadFileToBox Method
+INFO : [main] 2016-10-03 11:56:14,532 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::uploadFileToBox Method :: Before uploading file Chrysanthemum.jpg
+ERROR: [main] 2016-10-03 11:56:37,952 com.noblemktkyc.service.UserServiceImpl Inside UserServiceImpl :: getUserBoxFolder method
+INFO : [main] 2016-10-03 11:56:37,953 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method
+INFO : [main] 2016-10-03 11:56:37,953 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::setBoxAPIConnection Method
+INFO : [main] 2016-10-03 11:56:37,954 com.noblemktkyc.service.box.api.BoxApiServiceImpl BoxApiServiceImpl::setBoxAPIConnection Method::before creating connection::
+INFO : [main] 2016-10-03 11:56:39,122 com.noblemktkyc.service.box.api.BoxApiServiceImpl BoxApiServiceImpl::setBoxAPIConnection Method::after creating connection::
+INFO : [main] 2016-10-03 11:56:39,512 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method :: File/folder name is kyctestsample@gmail.com_complete
+INFO : [main] 2016-10-03 11:56:39,513 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method :: File/folder name is pallavi_inProgress
+INFO : [main] 2016-10-03 11:56:39,514 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method :: User Folder found pallavi_inProgress
+DEBUG: [main] 2016-10-03 11:56:39,601 org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.Pattern, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={flags=[Ljavax.validation.constraints.Pattern$Flag;@121c54fa, groups=[Ljava.lang.Class;@4390f46e, regexp=.*, message={javax.validation.constraints.Pattern.message}, payload=[Ljava.lang.Class;@7c6442c2}, constraintType=GENERIC}.
+DEBUG: [main] 2016-10-03 11:56:39,604 org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.Pattern, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={flags=[Ljavax.validation.constraints.Pattern$Flag;@121c54fa, groups=[Ljava.lang.Class;@3b0ee03a, regexp=.*, message={javax.validation.constraints.Pattern.message}, payload=[Ljava.lang.Class;@1ba05e38}, constraintType=GENERIC}.
+DEBUG: [main] 2016-10-03 11:56:39,605 org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, groups=[Ljava.lang.Class;@3e7dfd44, payload=[Ljava.lang.Class;@723ed581}, constraintType=GENERIC}.
+DEBUG: [main] 2016-10-03 11:56:39,605 org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@796065aa, min=1, message={javax.validation.constraints.Size.message}, max=2147483647, payload=[Ljava.lang.Class;@28a6301f}, constraintType=GENERIC}.
+DEBUG: [main] 2016-10-03 11:56:39,606 org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, groups=[Ljava.lang.Class;@773e2eb5, payload=[Ljava.lang.Class;@d8948cd}, constraintType=GENERIC}.
+DEBUG: [main] 2016-10-03 11:56:39,607 org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@3b7b05a8, min=1, message={javax.validation.constraints.Size.message}, max=2147483647, payload=[Ljava.lang.Class;@3d36dff4}, constraintType=GENERIC}.
+DEBUG: [main] 2016-10-03 11:56:39,642 org.hibernate.validator.resourceloading.PlatformResourceBundleLocator ValidationMessages not found.
+DEBUG: [main] 2016-10-03 11:56:39,644 org.hibernate.validator.resourceloading.PlatformResourceBundleLocator org.hibernate.validator.ValidationMessages found.
+INFO : [main] 2016-10-03 11:56:39,648 com.noblemktkyc.controller.KycSaveController inside KycSaveController :: saveKycInfo Method
+ERROR: [main] 2016-10-03 11:56:39,648 com.noblemktkyc.controller.KycSaveController 
+ERROR: [main] 2016-10-03 11:56:39,649 com.noblemktkyc.controller.KycSaveController [Ljava.lang.StackTraceElement;@3a2b2322
+ERROR: [main] 2016-10-03 11:56:39,650 com.noblemktkyc.controller.KycSaveController Exception in KycSaveController :: saveKycInfo method:: Exception is ::
+java.lang.NullPointerException
+	at com.noblemktkyc.model.CustomValidator.validate(CustomValidator.java:36)
+	at com.noblemktkyc.controller.KycSaveController.saveKycInfo(KycSaveController.java:78)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:111)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:806)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:729)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:65)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:167)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:144)
+	at com.noblemktkyc.test.controller.ITKycSaveControllerTest.saveKycInfoTest(ITKycSaveControllerTest.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:73)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:82)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:73)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:217)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+INFO : [main] 2016-10-03 11:56:39,658 com.noblemktkyc.controller.UserController inside UserController :: createUser Method
+INFO : [main] 2016-10-03 11:56:39,659 com.noblemktkyc.controller.CommonController Inside CommonController ::  getDocumentPath Method
+ERROR: [main] 2016-10-03 11:56:39,659 com.noblemktkyc.service.UserServiceImpl Inside UserServiceImpl :: getUserBoxFolder method
+INFO : [main] 2016-10-03 11:56:39,659 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method
+INFO : [main] 2016-10-03 11:56:39,659 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::setBoxAPIConnection Method
+INFO : [main] 2016-10-03 11:56:39,660 com.noblemktkyc.service.box.api.BoxApiServiceImpl BoxApiServiceImpl::setBoxAPIConnection Method::before creating connection::
+INFO : [main] 2016-10-03 11:56:40,944 com.noblemktkyc.service.box.api.BoxApiServiceImpl BoxApiServiceImpl::setBoxAPIConnection Method::after creating connection::
+INFO : [main] 2016-10-03 11:56:41,303 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method :: File/folder name is kyctestsample@gmail.com_complete
+INFO : [main] 2016-10-03 11:56:41,305 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method :: File/folder name is pallavi_inProgress
+INFO : [main] 2016-10-03 11:56:41,306 com.noblemktkyc.service.box.api.BoxApiServiceImpl Inside BoxApiServiceImpl::getBoxFolder Method :: User Folder found pallavi_inProgress
